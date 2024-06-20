@@ -15,7 +15,7 @@ export class jwtInterceptor implements HttpInterceptor{
 
   const localToken = this.apiService.getUserToken()
   req = req.clone( {setHeaders:{ Authorization: 'Bearer ' + localToken}} )
-  return next.handle(req);
+  return next.handle(req); //znaci po opisu prosledjuje se sledecem interceptoru u nizu a ako ga nema onda backendu
   
   }
   }

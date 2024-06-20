@@ -11,7 +11,9 @@ import { errorInterceptor } from './error.interceptor';
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideClientHydration(), provideAnimationsAsync(),
 
- provideHttpClient(withFetch(), withInterceptorsFromDi()), {provide:HTTP_INTERCEPTORS, useClass: jwtInterceptor, multi: true },
-{provide: HTTP_INTERCEPTORS, useClass: errorInterceptor, multi:true}]
+ provideHttpClient(withFetch(), withInterceptorsFromDi()), {provide:HTTP_INTERCEPTORS, useClass: jwtInterceptor, multi: true }//,
+//{provide: HTTP_INTERCEPTORS, useClass: errorInterceptor, multi:true}
+]
+
 
 };
